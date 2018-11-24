@@ -7,6 +7,7 @@ cache:
   yarn: true
   directories:
   - node_modules
+  - dist
 
 
 before_install:
@@ -34,7 +35,6 @@ jobs:
         paths:
           - dist
 
-
     - stage: "Continous Deployment"
       name: "deploy"
       if: branch = develop
@@ -46,8 +46,3 @@ jobs:
         local_dir: dist
         on:
           branch: develop
-
-addons:
-  artifacts:
-    paths:
-      - dist
