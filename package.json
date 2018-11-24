@@ -35,10 +35,18 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "sw-precache": {
+    "maximumFileSizeToCacheInBytes": 10485760
+  },
   "scripts": {
     "start": "parcel public/index.html --open"
   },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
   "devDependencies": {
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "parcel-plugin-sw-precache": "^1.0.3"
   }
 }
