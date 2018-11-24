@@ -31,18 +31,19 @@ jobs:
     - script:
         - yarn build
       name: "build"
-      artifacts:
-        paths:
-          - dist
 
     - stage: "Continous Deployment"
       name: "deploy"
       if: branch = develop
       script: skip
-      deploy: &pages
+      deploy:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
         local_dir: dist
         on:
           branch: develop
+
+
+after_script:
+  - rm -rf dist
