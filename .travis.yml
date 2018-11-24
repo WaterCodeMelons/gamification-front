@@ -33,6 +33,7 @@ jobs:
         - yarn build
 
     - stage: deploy
+      if: branch = develop
       script: skip
       deploy: &pages
         provider: pages
@@ -41,8 +42,3 @@ jobs:
         local_dir: dist
         on:
           branch: master
-
-
-stages:
-  - name: deploy
-    if: branch = develop
