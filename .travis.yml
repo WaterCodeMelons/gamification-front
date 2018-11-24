@@ -7,7 +7,6 @@ cache:
   yarn: true
   directories:
   - node_modules
-  - dist
 
 
 before_install:
@@ -35,7 +34,8 @@ jobs:
     - stage: "Continous Deployment"
       name: "deploy"
       if: branch = develop
-      script: skip
+      script:
+        - yarn build
       deploy:
         provider: pages
         skip_cleanup: true
@@ -43,7 +43,3 @@ jobs:
         local_dir: dist
         on:
           branch: develop
-
-
-after_deploy:
-  - travis cache -d -f
