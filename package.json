@@ -39,7 +39,10 @@
     "maximumFileSizeToCacheInBytes": 10485760
   },
   "scripts": {
-    "start": "parcel public/index.html --open"
+    "start": "parcel public/index.html --open",
+    "lint": "echo \"linting script mock\"",
+    "test": "echo \"testing script mock\"",
+    "build": "parcel build public/index.html"
   },
   "dependencies": {
     "react": "^16.6.3",

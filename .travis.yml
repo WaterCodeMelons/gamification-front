@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  only:
+    - develop
+install:
+  - yarn
+jobs:
+  include:
+    - stage: lint
+      script:
+        - yarn lint
+    - stage: test
+      script:
+        - yarn test
+    - stage: build
+      script:
+        - yarn build
+    - stage: deploy
+      script: skip
+      deploy: &pages
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: dist
+        on:
+          branch: master
