@@ -30,12 +30,9 @@ jobs:
     - script:
         - yarn build
       name: "build"
-      artifacts:
-        paths:
-          - dist
-
 
     - stage: "Continous Deployment"
+      name: "deploy"
       if: branch = develop
       script: skip
       deploy: &pages
@@ -45,3 +42,8 @@ jobs:
         local_dir: dist
         on:
           branch: develop
+
+addons:
+  artifacts:
+    paths:
+      - dist
