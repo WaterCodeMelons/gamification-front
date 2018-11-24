@@ -1,32 +1,39 @@
 language: node_js
 node_js:
   - "stable"
+
+
 cache:
   yarn: true
   directories:
   - node_modules
-branches:
-  only:
-    - develop
+
+
 before_install:
-- curl -o- -L https://yarnpkg.com/install.sh | bash
-- export PATH="$HOME/.yarn/bin:$PATH"
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$PATH"
+
+
 install:
   - yarn
+
+
 jobs:
   include:
-    - stage: "Continous Deployment"
-      name: "lint"
+    - stage: lint
       script:
         - yarn lint
-      name: "test"
-    - script:
+
+    - stage: test
+      script:
         - yarn test
-      name: "build"
-    - script:
+
+    - stage: build
+      script:
         - yarn build
-      name: "deploy"
-    - script: skip
+
+    - stage: deploy
+      script: skip
       deploy: &pages
         provider: pages
         skip_cleanup: true
@@ -34,3 +41,8 @@ jobs:
         local_dir: dist
         on:
           branch: master
+
+
+stages:
+  - name: deploy
+    if: branch = develop
