@@ -1,0 +1,32 @@
+{
+  "name": "gamification",
+  "version": "0.0.1",
+  "description": "Front end package for a gamification university project",
+  "keywords": [
+    "gamification",
+    "react",
+    "redux",
+    "parcel",
+    "bundler",
+    "front",
+    "end",
+    "typescript"
+  ],
+  "repository": "github:WaterCodeMelons/gamification-front",
+  "bugs": {
+    "url": "https://github.com/WaterCodeMelons/gamification-front/issues",
+    "email": "watercodemelons@gmail.com"
+  },
+  "author": "Dawid Yerginyan <dawid.yerginyan@gmail.com> (https://www.linkedin.com/in/dawidyerginyan/)",
+  "contributors": [
+    "Aleksander Ujek <aleksander.ujek@gmail.com> (https://www.linkedin.com/in/aleksanderujek/)",
+    "Sebastian Wolski <sebastian.wolski96@gmail.com> (https://www.linkedin.com/in/sebastian-wolski/)",
+    "Kamil Włodarczyk <k.wlodarczyk01@gmail.com> (https://www.linkedin.com/in/kamilwlodarczyk96/)"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8.0.0",
+    "yarn": ">= 1.7.0",
+    "npm": ">= 5.0.0"
+  }
+}
