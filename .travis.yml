@@ -20,21 +20,19 @@ install:
 
 jobs:
   include:
-    - stage: lint
+    - stage: "Continous Integration"
+      name: "lint"
       script:
         - yarn lint
-
-    - stage: test
-      script:
+    - script:
         - yarn test
-
-    - stage: build
-      script:
+      name: "test"
+    - script:
         - yarn build
+      name: "build"
 
-    - stage: deploy
+    - stage: "Continous Deployment"
       if: branch = develop
-      script: skip
       deploy: &pages
         provider: pages
         skip_cleanup: true
