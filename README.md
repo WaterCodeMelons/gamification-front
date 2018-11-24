@@ -5,6 +5,12 @@
 </p>
 
 <p align="center">
+  <a href="https://travis-ci.com/WaterCodeMelons/gamification-front">
+    <img src="https://travis-ci.com/WaterCodeMelons/gamification-front.svg?branch=develop" alt="Travis-CI status" height="40">
+  </a>
+</p>
+
+<p align="center">
 Gamification // @ TODO
 </p>
 
