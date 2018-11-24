@@ -41,4 +41,4 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: dist
         on:
-          branch: master
+          branch: develop
