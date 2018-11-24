@@ -45,5 +45,5 @@ jobs:
           branch: develop
 
 
-after_script:
-  - rm -rf dist
+after_deploy:
+  - travis cache -d -f
