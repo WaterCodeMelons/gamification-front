@@ -42,7 +42,7 @@
     "start": "parcel public/index.html --open",
     "lint": "echo \"linting script mock\"",
     "test": "echo \"testing script mock\"",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html --public-url ."
   },
   "dependencies": {
     "react": "^16.6.3",
