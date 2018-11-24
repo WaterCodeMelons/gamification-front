@@ -36,6 +36,7 @@ jobs:
 
 
     - stage: "Continous Deployment"
+      name: "deploy"
       if: branch = develop
       script: skip
       deploy: &pages
@@ -45,3 +46,8 @@ jobs:
         local_dir: dist
         on:
           branch: develop
+
+addons:
+  artifacts:
+    paths:
+      - dist
