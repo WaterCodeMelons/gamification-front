@@ -30,9 +30,14 @@ jobs:
     - script:
         - yarn build
       name: "build"
+      artifacts:
+        paths:
+          - dist
+
 
     - stage: "Continous Deployment"
       if: branch = develop
+      script: skip
       deploy: &pages
         provider: pages
         skip_cleanup: true
