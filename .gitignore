@@ -14,6 +14,7 @@ yarn-error.log*
 
 # Build artifacts
 build
+.cache
 dist
 doc
 coverage
