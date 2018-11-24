@@ -20,13 +20,13 @@ jobs:
       script:
         - yarn lint
       name: "test"
-      script:
+    - script:
         - yarn test
       name: "build"
-      script:
+    - script:
         - yarn build
       name: "deploy"
-      script: skip
+    - script: skip
       deploy: &pages
         provider: pages
         skip_cleanup: true
