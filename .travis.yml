@@ -8,20 +8,24 @@ cache:
 branches:
   only:
     - develop
+before_install:
+- curl -o- -L https://yarnpkg.com/install.sh | bash
+- export PATH="$HOME/.yarn/bin:$PATH"
 install:
   - yarn
 jobs:
   include:
-    - stage: lint
+    - stage: "Continous Deployment"
+      name: "lint"
       script:
         - yarn lint
-    - stage: test
+      name: "test"
       script:
         - yarn test
-    - stage: build
+      name: "build"
       script:
         - yarn build
-    - stage: deploy
+      name: "deploy"
       script: skip
       deploy: &pages
         provider: pages
