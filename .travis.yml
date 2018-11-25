@@ -1,38 +1,34 @@
 language: node_js
 node_js:
-  - "stable"
-
+  - 'stable'
 
 cache:
   yarn: true
   directories:
-  - node_modules
-
+    - node_modules
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
 
-
 install:
   - yarn
 
-
 jobs:
   include:
-    - stage: "Continous Integration"
-      name: "lint"
+    - stage: 'Continous Integration'
+      name: 'lint'
       script:
-        - yarn lint
+        - yarn lint:ci
     - script:
         - yarn test
-      name: "test"
+      name: 'test'
     - script:
         - yarn build
-      name: "build"
+      name: 'build'
 
-    - stage: "Continous Deployment"
-      name: "deploy"
+    - stage: 'Continous Deployment'
+      name: 'deploy'
       if: branch = develop
       script:
         - yarn build

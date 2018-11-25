@@ -21,6 +21,7 @@ Gamification // @ TODO
 **So, how can I contribute?** 🤔
 
 // @ TODO
+
 - Open a Pull Request and to The Moon we go 🚀
 
 ## Authors

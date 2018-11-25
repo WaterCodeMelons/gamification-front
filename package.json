@@ -40,17 +40,33 @@
   },
   "scripts": {
     "start": "parcel public/index.html --open",
-    "lint": "echo \"linting script mock\"",
+    "lint": "tslint --project . -t codeFrame",
+    "lint:ci": "tslint --project . -t stylish",
+    "pretty": "pretty-quick",
     "test": "echo \"testing script mock\"",
     "build": "parcel build public/index.html --public-url ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "@types/react": "^16.7.7",
+    "@types/react-dom": "^16.0.10",
+    "autoprefixer": "^9.3.1",
+    "husky": "^1.2.0",
     "node-sass": "^4.10.0",
     "parcel-bundler": "^1.10.3",
-    "parcel-plugin-sw-precache": "^1.0.3"
+    "parcel-plugin-sw-precache": "^1.0.3",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "typescript": "^3.1.6"
   }
 }
