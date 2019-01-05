@@ -10,8 +10,6 @@ import { Login } from './+login/login.component';
 import { Mathematic } from './+mathematic/mathematic.component';
 import { Memo } from './+memo/memo.component';
 
-import './app.component.scss';
-
 export const App: React.SFC = () => (
   <Router>
     <Switch>
