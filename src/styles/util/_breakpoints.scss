@@ -1,0 +1,39 @@
+// Breakpoints
+
+@mixin breakpointUp($_breakpoint, $_orientation: null) {
+  $_val: config(BREAKPOINTS, $_breakpoint);
+  $_query: 'screen';
+
+  @if $_val {
+    $_query: $_query + ' and (min-width: #{$_val})';
+  } @else {
+    $_query: $_query + ' and (min-width: #{$_breakpoint})';
+  }
+
+  @if $_orientation {
+    $_query: $_query + ' and (orientation: #{$_orientation})';
+  }
+
+  @media #{unquote($_query)} {
+    @content;
+  }
+}
+
+@mixin breakpointDown($_breakpoint, $_orientation: null) {
+  $_val: config(BREAKPOINTS, $_breakpoint);
+  $_query: 'screen';
+
+  @if $_val {
+    $_query: $_query + ' and (max-width: #{$_val - 1px})';
+  } @else {
+    $_query: $_query + ' and (max-width: #{$_breakpoint})';
+  }
+
+  @if $_orientation {
+    $_query: $_query + ' and (orientation: #{$_orientation})';
+  }
+
+  @media #{unquote($_query)} {
+    @content;
+  }
+}
