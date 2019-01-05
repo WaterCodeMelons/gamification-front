@@ -53,17 +53,21 @@
   },
   "dependencies": {
     "@types/react-router-dom": "^4.3.1",
+    "bootstrap": "^4.2.1",
+    "font-awesome": "^4.7.0",
+    "normalize-scss": "^7.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-tilt": "^0.1.4",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
     "reselect": "^4.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.7.18",
+    "@types/react": "16.7.13",
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.12",
     "@types/react-router": "^4.4.3",
@@ -78,6 +82,8 @@
     "pretty-quick": "^1.8.0",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
+    "tslint-consistent-codestyle": "^1.15.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.1.6"
   }
 }

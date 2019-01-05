@@ -15,11 +15,11 @@ import './app.component.scss';
 export const App: React.SFC = () => (
   <Router>
     <Switch>
-      <Redirect exact from={'/'} to={'/login'} />
-      <Route exact path={'/login'} component={Login as any} />
-      <Route exact path={'/dashboard'} component={Dashboard as any} />
-      <Route exact path={'/memo'} component={Memo as any} />
-      <Route exact path={'/math'} component={Mathematic as any} />
+      <Redirect exact={true} from={'/'} to={'/login'} />
+      <Route exact={true} path={'/login'} component={Login} />
+      <Route exact={true} path={'/dashboard'} component={Dashboard} />
+      <Route exact={true} path={'/memo'} component={Memo} />
+      <Route exact={true} path={'/math'} component={Mathematic} />
     </Switch>
   </Router>
 );
