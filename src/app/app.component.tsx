@@ -13,7 +13,7 @@ import { Memo } from './+memo/memo.component';
 import './app.component.scss';
 
 export const App: React.SFC = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Switch>
       <Redirect exact={true} from={'/'} to={'/login'} />
       <Route exact={true} path={'/login'} component={Login} />
