@@ -1,0 +1,60 @@
+// ==========================================================================
+// Config
+// ==========================================================================
+
+$config: (
+  BREAKPOINTS: (
+    XXS: 360px,
+    XS: 576px,
+    SM: 768px,
+    MD: 1024px,
+    LG: 1200px,
+    XLG: 1550px,
+    NAV: 1200px,
+  ),
+);
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-dark: #181a27;
+$color-dark-25: rgba($color-dark, 0.25);
+$color-dark-50: rgba($color-dark, 0.5);
+$color-dark-75: rgba($color-dark, 0.75);
+$color-dark-grey: #424b50;
+
+$color-border: #ededed;
+$color-shadow: rgba($color-black, 0.2);
+
+$color-gray: #808080;
+$color-gray-light: #f8f8f8;
+$color-gray-light-2: #c9cad0;
+$color-gray-light-3: #b4b7b9;
+$color-gray-light-4: #a7a7a7;
+
+$color-light-blue: #4ccfef;
+$color-blue-gray: #99b4c3;
+$color-blue-gray-light: #a2c5d1;
+$color-cadet-blue: #507495;
+$color-coral: #fe4a49;
+$color-light-gold: #ffce4a;
+$color-green: #a1d343;
+$color-greenish-teal: #4bcfaa;
+
+$color-facebook: #385895;
+$color-twitter: #1da1f2;
+$color-youtube: #e62117;
+
+@function config($_keys...) {
+  $_config: $config;
+
+  @each $_key in $_keys {
+    $_config: map-get($_config, $_key);
+  }
+
+  @return $_config;
+}
