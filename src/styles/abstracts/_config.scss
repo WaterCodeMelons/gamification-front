@@ -1,9 +1,5 @@
 // ==========================================================================
 // Config
-//
-// *1. Breakpoint at which navigation collapses.
-// *2. Gap between two adjacent powerlines.
-// *3. Number of dots on given powerline.
 // ==========================================================================
 
 $config: (
@@ -15,101 +11,7 @@ $config: (
     LG: 1200px,
     XLG: 1550px,
     NAV: 1200px,
-    // 1,,
   ),
-  ICONS: (
-    AC: '\e801',
-    ACCESSORIES: '\e838',
-    ADMIN: '\e82b',
-    AMBASSADOR: '\e84f',
-    ANGLE: '\e803',
-    ARROW: '\e81e',
-    ARROW_BACK_AND_FORTH: '\e841',
-    ARROW_LIGHTNING: '\e83f',
-    ARROW_TWO_ENDS: '\e843',
-    BACKUP_BOX: '\e83b',
-    BATTERY_FULL: '\e81f',
-    BATTERY_HALF_FULL: '\e821',
-    BETA: '\e836',
-    BROKEN_BATTERY: '\e83d',
-    CALENDAR: '\e840',
-    CALENDAR_WITH_DATE: '\e845',
-    CAR: '\e806',
-    CAR_2: '\e844',
-    CHARGER: '\e83a',
-    COFFEE: '\e833',
-    COMMUNITY: '\e807',
-    CONTRACT: '\e839',
-    DASHBOARD: '\e849',
-    DELIVERY_VAN: '\e825',
-    DIAGRAM: '\e802',
-    DOWNLOAD: '\e82f',
-    EYE: '\e81d',
-    FACEBOOK: '\e80b',
-    GEARS: '\e82c',
-    GLOBE: '\e80F',
-    GRID: '\e80c',
-    HEATER: '\e837',
-    HOUSE: '\e808',
-    HOUSE_AND_SUN: '\e83c',
-    HOUSE_ON_HILL: '\e809',
-    INDEPENDENT: '\e828',
-    INFORMATION: '\e82a',
-    LAMP: '\e835',
-    LAPTOP: '\e834',
-    LEAF: '\e82e',
-    LETTER: '\e815',
-    LETTER_2: '\e84f',
-    LETTER_ERROR: '\e800',
-    LIVE_STATE: '\e830',
-    LOCATION: '\e81c',
-    LOG_OUT: '\e80e',
-    MAGNIFYING_GLASS: '\e848',
-    NEWS: '\e84b',
-    OFFLINE: '\e854',
-    PAPERPLANE: '\e810',
-    PAPERPLANE_ERROR: '\e804',
-    PARTY: '\e82d',
-    PEOPLE: '\e812',
-    POSITION: '\e847',
-    POT: '\e813',
-    PV: '\e814',
-    QUESTION_MARK: '\e80d',
-    SHOWER: '\e816',
-    SMARTHOME: '\e817',
-    SMARTPHONE: '\e831',
-    SONNENBATTERIE: '\e818',
-    TELESCOPE: '\e894',
-    THUNDER: '\e80a',
-    TICK: '\e805',
-    TOOLS: '\e823',
-    TREE: '\e84e',
-    TROPHY: '\e81a',
-    TRUCK: '\e850',
-    TWITTER: '\e81b',
-    UNDER_CONSTRUCTION: '\e83e',
-    UFO: '\e851',
-    USER: '\e826',
-    USER_THIN: '\e85f',
-    WARNING: '\e846',
-    WASHING_MACHINE: '\e832',
-    X: '\e829',
-    YOUTUBE: '\e827',
-  ),
-  LIVE_STATE: (
-    CHART_CIRCLE_SIZE: 80px,
-    CHART_CIRCLE_SIZE_DESKTOP: 140px,
-    CHART_HORIZONTAL_LINE_SIZE: 140px,
-    CHART_HORIZONTAL_LINE_SIZE_DESKTOP: 426px,
-    CHART_VERTICAL_LINE_SIZE: 170px,
-    CHART_VERTICAL_LINE_SIZE_DESKTOP: 250px,
-    CHART_LINE_GAP: 14px,
-    // 2
-      CHART_DOT_COUNT: 3,
-    // 3,,
-  ),
-  IS_BATTERY_ANIMATION_ACTIVE: false,
-  // TODO: create some easter egg maybe,
 );
 
 // ==========================================================================
@@ -146,22 +48,6 @@ $color-greenish-teal: #4bcfaa;
 $color-facebook: #385895;
 $color-twitter: #1da1f2;
 $color-youtube: #e62117;
-
-$infographic-colors: (
-  active: $color-light-blue,
-  white: $color-white,
-  gray-light: #f8fbfd,
-  gray-light-2: #f0f5f8,
-  gray-light-3: #d9e6e9,
-  gray: #d2dde5,
-  gray-dark: #cddee6,
-  gray-dark-2: #cccdcc,
-  green-light: #e3f3ce,
-  green: #d5e6b5,
-  green-dark: #d1e5c3,
-  blue: #e3f6fb,
-  dark: $color-dark,
-);
 
 @function config($_keys...) {
   $_config: $config;
