@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Redirect,
   Route,
-  Switch
+  Switch,
 } from 'react-router-dom';
 import { Dashboard } from './+dashboard/dashboard.component';
 import { Login } from './+login/login.component';

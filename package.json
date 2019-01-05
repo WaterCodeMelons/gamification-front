@@ -85,5 +85,8 @@
     "tslint-consistent-codestyle": "^1.15.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.1.6"
+  },
+  "prettier": {
+    "trailingComma": "all"
   }
 }
