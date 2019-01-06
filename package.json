@@ -54,7 +54,6 @@
     }
   },
   "dependencies": {
-    "@types/react-router-dom": "^4.3.1",
     "bootstrap": "^4.2.1",
     "font-awesome": "^4.7.0",
     "normalize-scss": "^7.0.1",
@@ -65,7 +64,6 @@
     "react-router-dom": "^4.3.1",
     "react-tilt": "^0.1.4",
     "redux": "^4.0.1",
-    "redux-actions": "^2.6.4",
     "reselect": "^4.0.0"
   },
   "devDependencies": {
@@ -73,7 +71,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.12",
     "@types/react-router": "^4.4.3",
-    "@types/redux-actions": "^2.3.1",
+    "@types/react-router-dom": "^4.3.1",
     "@types/reselect": "^2.2.0",
     "autoprefixer": "^9.3.1",
     "husky": "^1.2.0",

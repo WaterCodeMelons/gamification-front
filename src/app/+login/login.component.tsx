@@ -1,13 +1,33 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
 import Tilt from 'react-tilt';
+import { compose } from 'redux';
+import { mapActions } from '../../util/redux/action';
+import { StoreState } from '../store/store.interface';
+import { Actions as UserActions, getUserName } from '../store/user';
+import { UserNameForm } from './components';
 
 import image from '../../images/img-01.png';
+
 import './login.component.scss';
 
-interface Props extends RouteComponentProps {}
+const mapStateToProps = (state: StoreState) => ({
+  userName: getUserName(state),
+});
+const mapDispatchToProps = mapActions({
+  setUserName: UserActions.setName,
+});
 
-export const LoginComponent: React.SFC<Props> = ({ history }) => (
+type Props = typeof mapDispatchToProps &
+  ReturnType<typeof mapStateToProps> &
+  RouteComponentProps;
+
+export const LoginComponent: React.SFC<Props> = ({
+  history,
+  actions,
+  userName,
+}) => (
   <div className="container-login100">
     <div className="wrap-login100">
       <Tilt options={{ scale: 1.1 }}>
@@ -16,7 +36,7 @@ export const LoginComponent: React.SFC<Props> = ({ history }) => (
         </div>
       </Tilt>
 
-      <form className="login100-form validate-form">
+      <div className="login100-form validate-form">
         <span className="login100-form-title">
           Aby korzystać z aplikacji musisz się zalogować
         </span>
@@ -24,11 +44,9 @@ export const LoginComponent: React.SFC<Props> = ({ history }) => (
           className="wrap-input100 validate-input"
           data-validate="Valid email is required: ex@abc.xyz"
         >
-          <input
-            className="input100"
-            type="text"
-            name="email"
-            placeholder="Nazwa użytkownika"
+          <UserNameForm
+            initialState={userName}
+            onChange={actions.setUserName}
           />
           <span className="focus-input100" />
           <span className="symbol-input100">
@@ -74,9 +92,15 @@ export const LoginComponent: React.SFC<Props> = ({ history }) => (
             <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true" />
           </a>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 );
 
-export const Login = withRouter(LoginComponent);
+export const Login = compose<typeof LoginComponent>(
+  withRouter,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  ),
+)(LoginComponent);
