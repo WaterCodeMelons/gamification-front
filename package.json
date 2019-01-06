@@ -45,7 +45,8 @@
     "lint:ci": "tslint --project . -t stylish",
     "pretty": "pretty-quick",
     "test": "echo \"testing script mock\"",
-    "build": "parcel build public/index.html --public-url ."
+    "build": "parcel build public/index.html --public-url .",
+    "deploy": "node scripts/deploy"
   },
   "husky": {
     "hooks": {
