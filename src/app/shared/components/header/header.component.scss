@@ -1,0 +1,85 @@
+@import 'src/styles/abstracts';
+
+.c-header {
+  display: flex;
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-border;
+  box-shadow: 1px 1px 8px $color-dark-25;
+}
+
+.c-header__inner {
+  display: flex;
+  flex: 1 0 0;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 40px;
+  margin: 0px 15px;
+
+  @include breakpointUp(MD) {
+    margin: 0px 30px;
+    height: 80px;
+  }
+
+  @include breakpointUp(LG) {
+    max-width: config(BREAKPOINTS, LG);
+  }
+}
+
+.c-header__greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat-Bold, sans-serif;
+  font-size: 15px;
+
+  @include breakpointUp(MD) {
+    font-size: 30px;
+  }
+}
+
+.c-header__nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: right;
+  align-items: stretch;
+}
+
+.c-header__nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px;
+  transition: 0.25s ease-in-out;
+  font-size: 14px;
+  cursor: pointer;
+
+  @include breakpointUp(SM) {
+    padding: 0px 40px;
+  }
+
+  @include breakpointUp(MD) {
+    font-size: 20px;
+  }
+
+  &,
+  &:link,
+  &:visited,
+  &:focus {
+    color: $color-dark-75;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: rgba(#000, 0.05);
+    color: $color-light-blue;
+    box-shadow: inset 0px -3px 0px $color-light-blue;
+  }
+
+  &.active {
+    color: $color-light-blue;
+    box-shadow: inset 0px -3px 0px $color-light-blue;
+  }
+}
