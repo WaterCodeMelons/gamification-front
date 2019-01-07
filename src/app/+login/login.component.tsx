@@ -1,33 +1,22 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { RouteComponentProps, withRouter } from 'react-router';
+import { RouteComponentProps } from 'react-router';
 import Tilt from 'react-tilt';
-import { compose } from 'redux';
 import { mapActions } from '../../util/redux/action';
-import { StoreState } from '../store/store.interface';
-import { Actions as UserActions, getUserName } from '../store/user';
+import { Actions as UserActions } from '../store/user';
 import { UserNameForm } from './components';
 
 import image from '../../images/img-01.png';
 
 import './login.component.scss';
 
-const mapStateToProps = (state: StoreState) => ({
-  userName: getUserName(state),
-});
 const mapDispatchToProps = mapActions({
   setUserName: UserActions.setName,
 });
 
-type Props = typeof mapDispatchToProps &
-  ReturnType<typeof mapStateToProps> &
-  RouteComponentProps;
+type Props = typeof mapDispatchToProps & RouteComponentProps;
 
-export const LoginComponent: React.SFC<Props> = ({
-  history,
-  actions,
-  userName,
-}) => (
+export const LoginComponent: React.SFC<Props> = ({ history, actions }) => (
   <div className="container-login100">
     <div className="wrap-login100">
       <Tilt options={{ scale: 1.1 }}>
@@ -44,10 +33,7 @@ export const LoginComponent: React.SFC<Props> = ({
           className="wrap-input100 validate-input"
           data-validate="Valid email is required: ex@abc.xyz"
         >
-          <UserNameForm
-            initialState={userName}
-            onChange={actions.setUserName}
-          />
+          <UserNameForm onChange={actions.setUserName} />
           <span className="focus-input100" />
           <span className="symbol-input100">
             <i className="fa fa-user" aria-hidden="true" />
@@ -97,10 +83,7 @@ export const LoginComponent: React.SFC<Props> = ({
   </div>
 );
 
-export const Login = compose<typeof LoginComponent>(
-  withRouter,
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
+export const Login = connect(
+  null,
+  mapDispatchToProps,
 )(LoginComponent);

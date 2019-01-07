@@ -1,17 +1,35 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
+import { StoreState } from '../../../store/store.interface';
+import { getUserName } from '../../../store/user';
 import { Header } from '../header';
 
 import './layout.component.scss';
 
-interface Props {
-  userName: string;
-}
+const mapStateToProps = (state: StoreState) => ({
+  userName: getUserName(state),
+});
 
-export const Layout: React.SFC<Props> = ({ userName, children }) => (
-  <div className={'c-layout'}>
-    <Header userName={userName} />
-    <div className={'c-layout__inner'}>
-      <div className={'c-layout__inner-content'}>{children}</div>
+type Props = ReturnType<typeof mapStateToProps> & RouteComponentProps;
+
+export const LayoutComponent: React.SFC<Props> = ({
+  userName,
+  history,
+  children,
+}) => {
+  if (!userName) {
+    history.push('/login');
+  }
+
+  return (
+    <div className={'c-layout'}>
+      <Header userName={userName!} />
+      <div className={'c-layout__inner'}>
+        <div className={'c-layout__inner-content'}>{children}</div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+export const Layout = connect(mapStateToProps)(LayoutComponent);
