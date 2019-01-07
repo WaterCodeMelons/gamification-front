@@ -1,0 +1,48 @@
+@import 'src/styles/abstracts';
+
+.c-memo__card {
+  margin: 5px;
+  font-weight: bold;
+  flex: 1 0;
+  flex-basis: calc(25% - 10px);
+  height: auto;
+  background: $color-border;
+}
+
+.c-memo__card--green.active {
+  background: green;
+}
+
+.c-memo__card--blue.active {
+  background: blue;
+}
+
+.c-memo__card--red.active {
+  background: red;
+}
+
+.c-memo__card--yellow.active {
+  background: yellow;
+}
+
+.c-memo__card--pink.active {
+  background: pink;
+}
+
+.c-memo__card--orange.active {
+  background: orange;
+}
+
+.c-memo__card--purple.active {
+  background: purple;
+}
+
+.c-memo__card--cyan.active {
+  background: cyan;
+}
+
+.c-memo__card:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}

@@ -4,7 +4,7 @@ import { UserState } from './user.interface';
 
 const initialState: UserState = {
   name: undefined,
-  score: 0,
+  score: 10000,
 };
 
 export const reducer: Reducer<UserState, UserActions> = (

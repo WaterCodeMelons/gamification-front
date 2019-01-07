@@ -1,0 +1,11 @@
+@import 'src/styles/abstracts';
+
+.c-memo {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  line-height: 30px;
+}

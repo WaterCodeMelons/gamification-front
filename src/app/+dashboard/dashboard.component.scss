@@ -1,0 +1,37 @@
+@import 'src/styles/abstracts';
+
+.c-dashboard {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: stretch;
+}
+
+.c-dashboard__tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0;
+  background: $color-gray-light;
+  padding: 50px 30px;
+  margin: 10px;
+  transition: 0.2s ease-in-out;
+  border-radius: 3px;
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-dark-75;
+
+  &:link,
+  &:active,
+  &:focus {
+    color: $color-dark-75;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $color-dark-75;
+    text-decoration: none;
+    background: rgba($color-dark, 0.1);
+  }
+}

@@ -1,17 +1,29 @@
+@import 'src/styles/abstracts';
+
 .c-profile {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  font-weight: 900;
 }
 
 .c-profile__user-icon {
-  font-size: 200px !important;
+  font-size: 250px !important;
 }
 
 .c-profile__user-name {
-  font-size: 60px;
+  font-size: 90px;
 }
 
 .c-profile__user-score {
-  font-size: 40px;
+  font-size: 80px;
+  color: $color-light-gold;
+  text-shadow: 1px 1px 15px rgba($color-light-gold, 0.5);
+  transition: 0.2s ease-in-out;
+  cursor: default;
+
+  &:hover {
+    font-size: 100px;
+    text-shadow: 0px 0px 30px $color-light-gold;
+  }
 }
