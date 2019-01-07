@@ -4,6 +4,7 @@ import { UserState } from './user.interface';
 
 const initialState: UserState = {
   name: undefined,
+  score: 0,
 };
 
 export const reducer: Reducer<UserState, UserActions> = (
@@ -15,6 +16,11 @@ export const reducer: Reducer<UserState, UserActions> = (
       return {
         ...state,
         name: action.name,
+      };
+    case USER_ACTIONS.ADD_SCORE:
+      return {
+        ...state,
+        score: state.score + action.score,
       };
     default:
       return state;

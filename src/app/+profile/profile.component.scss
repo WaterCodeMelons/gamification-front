@@ -1,0 +1,17 @@
+.c-profile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.c-profile__user-icon {
+  font-size: 200px !important;
+}
+
+.c-profile__user-name {
+  font-size: 60px;
+}
+
+.c-profile__user-score {
+  font-size: 40px;
+}
