@@ -10,10 +10,10 @@ export const Dashboard: React.SFC = () => {
         Memo
       </NavLink>
       <NavLink className={'c-dashboard__tile'} to={'/dashboard'}>
-        PH
+        Quiz
       </NavLink>
       <NavLink className={'c-dashboard__tile'} to={'/dashboard'}>
-        PH
+        Matematyka
       </NavLink>
     </div>
   );
