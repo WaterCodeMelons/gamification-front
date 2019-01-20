@@ -1,10 +1,9 @@
 import * as React from 'react';
-import './mathematic.component.scss';
-import { mapActions } from '../../util/redux/action';
 import { connect } from 'react-redux';
-import { StoreState } from '../store/store.interface';
-import { getUserState, Actions } from '../store/user';
+import { mapActions } from '../../util/redux/action';
 import { Actions as UserActions } from '../store/user';
+
+import './mathematic.component.scss';
 
 interface State {
   firstNumber: number;
@@ -12,6 +11,7 @@ interface State {
   result: number;
   operator: string;
   level: number;
+  operators: string[];
 }
 
 const mapDispatchToProps = mapActions({
@@ -29,20 +29,19 @@ export class MathematicComponent extends React.Component<Props, State> {
       result: 0,
       operator: '+',
       level: 1,
+      operators: ['+', '-', '*', '/'],
     };
   }
 
-  operators = ['+', '-', '*', '/'];
-
-  updateInputValue(event: any) {
-    this.setState({ result: event.target.value });
-  }
+  updateInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ result: parseInt(event.target.value) });
+  };
 
   generateOperation() {
     this.setState({
       firstNumber: this.random(Math.pow(10, this.state.level)),
       secondNumber: this.random(Math.pow(10, this.state.level)),
-      operator: this.operators[this.random(4)],
+      operator: this.state.operators[this.random(4)],
     });
   }
 
@@ -54,7 +53,7 @@ export class MathematicComponent extends React.Component<Props, State> {
             this.state.operator +
             this.state.secondNumber,
         ),
-      ) == this.state.result
+      ) === this.state.result
     ) {
       this.setState({ level: this.state.level + 1 });
       if (this.state.level > 3) {
@@ -91,13 +90,13 @@ export class MathematicComponent extends React.Component<Props, State> {
             className="c_mathematic__input form-control col-md-2"
             name="resultInput"
             id="resultInput"
-            onChange={this.updateInputValue.bind(this)}
+            onChange={e => this.updateInput(e)}
             placeholder="Wpisz wynik"
           />
           <button
             type="submit"
             className="c_mathematic__btn btn btn-primary"
-            onClick={this.compareValues.bind(this)}
+            onClick={() => this.compareValues()}
           >
             Zatwierdz
           </button>
