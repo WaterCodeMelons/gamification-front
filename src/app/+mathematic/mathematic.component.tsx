@@ -34,7 +34,7 @@ export class MathematicComponent extends React.Component<Props, State> {
   }
 
   updateInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ result: parseInt(event.target.value) });
+    this.setState({ result: parseInt(event.target.value, 10) });
   };
 
   generateOperation() {
