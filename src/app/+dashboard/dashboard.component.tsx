@@ -12,7 +12,7 @@ export const Dashboard: React.SFC = () => {
       <NavLink className={'c-dashboard__tile'} to={'/dashboard'}>
         Quiz
       </NavLink>
-      <NavLink className={'c-dashboard__tile'} to={'/dashboard'}>
+      <NavLink className={'c-dashboard__tile'} to={'/math'}>
         Matematyka
       </NavLink>
     </div>

@@ -1,0 +1,18 @@
+.c_mathematic {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.c_mathematic__operation {
+  span {
+    font-size: 96px;
+    color: red;
+  }
+}
+
+.c_mathematic__input {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
